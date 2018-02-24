@@ -2,4 +2,6 @@
 ---
 # Hello World
 site.url: {{site.url}}
-<base href="//{%if site.url == 'mkgask.github.io'%}{{ site.url }}{% else %}localhost{% endif %}">
+
+{%if site.url == 'https://mkgask.github.io'%}{%assign site_url = site.url%}{% else %}{%assign site_url = '//localhost'%}{% endif %}
+<base href="{{ site_url }}">
